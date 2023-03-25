@@ -32,7 +32,7 @@ import crescent_library
 import tornado_library
 import fire_library
 import wall_library
-
+import attacks
 import constants
 import enemy
 #------------------------
@@ -55,7 +55,7 @@ clock = pygame.time.Clock()
 
 
 #-------IMAGES/SOUNDS---------
-os.chdir('../img')
+os.chdir('./img')
 next_image = pygame.image.load("NextButt.gif").convert_alpha()
 
 start_image = pygame.image.load("startButt.gif").convert_alpha()
@@ -194,19 +194,19 @@ ball = PokeballSprite()
 
 #---ATTACKS-----
 
-leaf = leaf_library.LeafSprite()
+leaf = attacks.AttackSprites("leaf-sheet.png")
 
-leaf2 = leaf_library.LeafSprite()
+leaf2 = attacks.AttackSprites("leaf-sheet.png")
 
-crescent = crescent_library.CrescentSprite()
+crescent = attacks.AttackSprites("Crescent-sheet.png")
 
-tornado = tornado_library.TornadoSprite()
+tornado = attacks.AttackSprites("woosh-sheet.png")
 
-tornado2 = tornado_library.TornadoSprite()
+tornado2 = attacks.AttackSprites("woosh-sheet.png")
 
-fire = fire_library.FireSprite()
+fire = attacks.AttackSprites("fire-sheet.png")
 
-pulse = pulse_library.DargonPSprite()
+pulse = attacks.AttackSprites("pulse-sheet.png")
 
 trainer_sprit.walls = wall_list
 

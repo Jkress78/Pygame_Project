@@ -30,7 +30,7 @@ class SpriteSheet(object):
         self.sprite_sheet = pygame.image.load(file_name).convert()
         os.chdir('../src')
 
-    def get_image(self, x, y, width, height):
+    def get_image(self, x, y, width, height, trans):
 
         # Create a new blank image
         image = pygame.Surface([width, height]).convert()
@@ -39,7 +39,7 @@ class SpriteSheet(object):
         image.blit(self.sprite_sheet, (0, 0), (x, y, width, height))
 
         # Set Transparent color
-        image.set_colorkey(constants.WHITE)
+        image.set_colorkey(trans)
 
         # Return the image
         return image

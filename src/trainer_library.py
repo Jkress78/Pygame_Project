@@ -18,6 +18,7 @@ import pygame
 import sys
 import random
 import wall_library
+import constants
 
 from sprite_sheet import SpriteSheet
 def load_image(name):
@@ -45,26 +46,26 @@ class TrainerSprite(pygame.sprite.Sprite):
 
         sprite_sheet = SpriteSheet("sprite_sheet1.png")
         # Load all the right facing images into a list
-        image = sprite_sheet.get_image(14, 206, 34, 46)
+        image = sprite_sheet.get_image(14, 206, 34, 46, constants.WHITE)
         self.walking_frames_r.append(image)
-        image = sprite_sheet.get_image(78, 204, 34, 54)
+        image = sprite_sheet.get_image(78, 204, 34, 54, constants.WHITE)
         self.walking_frames_r.append(image)
-        image = sprite_sheet.get_image(142, 207, 34, 46)
+        image = sprite_sheet.get_image(142, 207, 34, 46, constants.WHITE)
         self.walking_frames_r.append(image)
-        image = sprite_sheet.get_image(206, 204, 34, 54)
+        image = sprite_sheet.get_image(206, 204, 34, 54, constants.WHITE)
         self.walking_frames_r.append(image)
 
         #LEFT FACING
-        image = sprite_sheet.get_image(14, 206, 34, 46)
+        image = sprite_sheet.get_image(14, 206, 34, 46, constants.WHITE)
         image = pygame.transform.flip(image, True, False)
         self.walking_frames_l.append(image)
-        image = sprite_sheet.get_image(78, 204, 34, 54)
+        image = sprite_sheet.get_image(78, 204, 34, 54, constants.WHITE)
         image = pygame.transform.flip(image, True, False)
         self.walking_frames_l.append(image)
-        image = sprite_sheet.get_image(142, 207, 34, 46)
+        image = sprite_sheet.get_image(142, 207, 34, 46, constants.WHITE)
         image = pygame.transform.flip(image, True, False)
         self.walking_frames_l.append(image)
-        image = sprite_sheet.get_image(204, 204, 40, 54)
+        image = sprite_sheet.get_image(204, 204, 40, 54, constants.WHITE)
         image = pygame.transform.flip(image, True, False)
         self.walking_frames_l.append(image)
 

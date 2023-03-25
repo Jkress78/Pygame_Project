@@ -18,7 +18,7 @@ import pygame
 import sys
 import random
 
-from sprite_sheet3 import SpriteSheet
+from sprite_sheet import SpriteSheet
 class LeafSprite(pygame.sprite.Sprite):
     # -- Attributes
     # Set speed vector of player
@@ -42,7 +42,7 @@ class LeafSprite(pygame.sprite.Sprite):
 
         sprite_sheet = SpriteSheet("leaf-sheet.png")
         # Load all the right facing images into a list
-        image = sprite_sheet.get_image(1, 1, 28, 26)
+        image = sprite_sheet.get_image(1, 1, 28, 26, constants.BLACK)
         self.moving_frames.append(image)
         image = sprite_sheet.get_image(32, 1, 26, 26)
         self.moving_frames.append(image)
@@ -63,6 +63,7 @@ class LeafSprite(pygame.sprite.Sprite):
         self.rect.y += self.change_y
         pos = self.rect.y
         if self.direction == "D":
+            # (pos // 30) means 30 frames per second 
             frame = (pos // 30) % len(self.moving_frames)
             self.image = self.moving_frames[frame]
 
