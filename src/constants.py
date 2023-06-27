@@ -11,6 +11,9 @@ PINK    =   (244, 66, 182)
 LIME    =   (66, 244, 86)
 FUSCHIA =   (234, 7, 117)
 ball_color = (0, 128, 128)
+TRANSPARENT = (0,0,0,0)
+
+
 # Screen dimensions
 size = (1000, 700)
 

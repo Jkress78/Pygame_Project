@@ -39,8 +39,8 @@ class TrainerSprite(pygame.sprite.Sprite):
     # What direction is the player facing?
     direction = "R"
 
-    walls = None
-    def __init__(self):
+    t_walls = None
+    def __init__(self, walls):
         # Call the parent's constructor
         pygame.sprite.Sprite.__init__(self)
 
@@ -79,6 +79,8 @@ class TrainerSprite(pygame.sprite.Sprite):
         # Set a referance to the image rect.
         self.rect = self.image.get_rect()
 
+        # Set the walls that the player interacts with
+        self.t_walls = walls
 
 
 
@@ -95,7 +97,7 @@ class TrainerSprite(pygame.sprite.Sprite):
             self.image = self.walking_frames_l[frame]
 
         # See if we hit anything
-        block_hit_list = pygame.sprite.spritecollide(self, self.walls, False)
+        block_hit_list = pygame.sprite.spritecollide(self, self.t_walls, False)
         for block in block_hit_list:
             # If we are moving right,
             # set our right side to the left side of the item we hit

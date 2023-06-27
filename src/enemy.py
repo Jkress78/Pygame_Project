@@ -10,7 +10,11 @@ def load_image(name):
  return image
 
 class Enemy(pygame.sprite.Sprite):
- def __init__(self, x, y, v1, v2, name, bx, by):
+    
+ caught = False
+ tempx = 0
+ tempy = 0
+ def __init__(self, x, y, v1, v2, name, bx, by, atck_num):
      super().__init__()
      self.images = []
      self.images.append(load_image(name))
@@ -24,19 +28,23 @@ class Enemy(pygame.sprite.Sprite):
 
      # Set speed vector
      self.change_x = v1
-     self.change_y = v1
+     self.change_y = v2
+
+     self.attack = atck_num
      
-     self.caught = False
+     
 
  def update(self):
      self.rect.x += self.change_x
      self.rect.y += self.change_y
         
  def stop(self):
-      #called when game is paused
-     self.change_x = 0
-     self.change_y = 0
+    #called when game is paused
+    self.tempx = self.change_x
+    self.tempy = self.change_y
+    self.change_x = 0
+    self.change_y = 0
         
  def go(self):
-     self.change_x = v1
-     self.change_y = v2    
+     self.change_x = self.tempx
+     self.change_y = self.tempy

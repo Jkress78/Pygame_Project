@@ -388,7 +388,7 @@ while done and instruction_page != 3:
     
     
     
-    if next_button.draw() == True:
+    if next_button.draw(screen) == True:
         instruction_page += 1 
         transition_sound.play()
     # Draw instructions, page 1
@@ -518,49 +518,50 @@ while done:
 
     # -----------------ATTACK RATES--------------------------
         if tornado_shoot == random.randrange(0, 500):
-            tornado = tornado_library.TornadoSprite()
+            #tornado = tornado_library.TornadoSprite()
             tornado.rect.x = pidgey.rect.x
             tornado.rect.y = pidgey.rect.y
             tornado.go_down()
             attack_list.add(tornado)
 
         if leaf_shoot == random.randrange(0, 500):
-           leaf = leaf_library.LeafSprite()
+           #leaf = leaf_library.LeafSprite()
            leaf.rect.x = caterpie.rect.x
            leaf.rect.y = caterpie.rect.y
            leaf.go_down()
            attack_list.add(leaf)
 
         if crescent_shoot == random.randrange(0, 520):
-          crescent = crescent_library.CrescentSprite()
+          #crescent = crescent_library.CrescentSprite()
           crescent.rect.x = rat.rect.x
           crescent.rect.y = rat.rect.y
           crescent.go_down()
           attack_list.add(crescent)
 
         if tornado_shoot2 == random.randrange(0, 520):
-            tornado2 = tornado_library.TornadoSprite()
+            #tornado2 = tornado_library.TornadoSprite()
             tornado2.rect.x = drifloon.rect.x
             tornado2.rect.y = drifloon.rect.y
             tornado2.go_down()
             attack_list.add(tornado2)
+            print("balls")
 
         if leaf_shoot2 == random.randrange(0, 520):
-           leaf2 = leaf_library.LeafSprite()
+           #leaf2 = leaf_library.LeafSprite()
            leaf2.rect.x = ralts.rect.x
            leaf2.rect.y = ralts.rect.y
            leaf2.go_down()
            attack_list.add(leaf2)
 
         if fire_shoot == random.randrange(0, 520):
-            fire = fire_library.FireSprite()
+            #fire = fire_library.FireSprite()
             fire.rect.x = poocheyana.rect.x
             fire.rect.y = poocheyana.rect.y
             fire.go_down()
             attack_list.add(fire)
 
         if pulse_shoot == random.randrange(0, 520):
-            pulse = pulse_library.DargonPSprite()
+            #pulse = pulse_library.DargonPSprite()
             pulse.rect.x = dratini.rect.x
             pulse.rect.y = dratini.rect.y
             pulse.go_down()

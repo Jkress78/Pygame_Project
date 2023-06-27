@@ -34,7 +34,7 @@ class PokeballSprite(pygame.sprite.Sprite):
     direction = "U"
 
     # -- Methods
-    def __init__(self):
+    def __init__(self, x, y):
 
 
         # Call the parent's constructor
@@ -65,6 +65,9 @@ class PokeballSprite(pygame.sprite.Sprite):
 
         # Set a referance to the image rect.
         self.rect = self.image.get_rect()
+
+        self.rect.x = x
+        self.rect.y = y
     def update(self):
 
         # Move up
